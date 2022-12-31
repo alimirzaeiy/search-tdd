@@ -21,16 +21,4 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-build --no-restore --configuration Release --verbosity normal --collect:"XPlat Code Coverage" --no-build
-    - name: Publish code coverage reports to codecove.io
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        files: ./**/coverage.cobertura.xml
-        fail_ci_if_error: true
-    - name: Publish code coverage reports to codecove.io
-      uses: codecov/codecov-action@v1
-      with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./**/coverage.cobertura.xml
-          fail_ci_if_error: true
+      run: dotnet test --no-build --no-restore --configuration Release --verbosity normal 
