@@ -1,12 +1,4 @@
-﻿using FluentAssertions;
-using search_tdd;
-using search_tddTests4;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using search_tddTests4;
 using Xunit;
 using Xunit.Abstractions;
 
