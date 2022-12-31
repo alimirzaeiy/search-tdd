@@ -15,10 +15,6 @@ namespace search_tdd
             //throw new NotImplementedException();
             return Dictionary[keyword];
         }
-        public MapOfIndexedWordsByFile()
-        {
-
-        }
         public MapOfIndexedWordsByFile(Dictionary<string, Dictionary<int, List<int>>> dictionary)
         {
             Dictionary = dictionary;
