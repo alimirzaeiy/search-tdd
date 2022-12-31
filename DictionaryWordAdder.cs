@@ -10,20 +10,13 @@ namespace search_tdd
     {
         public static DictionaryOfWordsByFilesAndTokens AddWordIfExistsInDictionary(DictionaryOfWordsByFilesAndTokens addressesByFileIdByToken, string word, int i, int j)
         {
-            if (addressesByFileIdByToken.dictionary[word].TokenKeyValues.ContainsKey(i))
-            {
-                addressesByFileIdByToken.dictionary[word].TokenKeyValues[i].Add(j);
-            }
-            else
-            {
-                addressesByFileIdByToken.dictionary[word].TokenKeyValues.Add(i, new List<int> { { j } });
-            }
+            addressesByFileIdByToken.dictionary[word].AddTokenIndices(i, j);
             return addressesByFileIdByToken;
         }
         public static DictionaryOfWordsByFilesAndTokens AddWordIfDoesntExistInDictionary(DictionaryOfWordsByFilesAndTokens addressesByFileIdByToken, string word, int i, int j)
         {
             DictionaryOfFilesAndTokens fileAndToken = new DictionaryOfFilesAndTokens();
-            fileAndToken.TokenKeyValues.Add(i, new List<int> { { j } });
+            fileAndToken.SetTokenIndices(i, new List<int> { { j } });
             addressesByFileIdByToken.dictionary.Add(word, fileAndToken);
             return addressesByFileIdByToken;
         }

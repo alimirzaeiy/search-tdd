@@ -7,12 +7,23 @@ using static System.Text.Json.JsonSerializer;
 
 namespace search_tdd
 {
-    internal static class Print
+    public class Printer
     {
-        public static void it(object input)
+        private readonly IWriter _writer;
+
+        public Printer() : this(new ConsoleWriter())
         {
-            Console.WriteLine(Serialize(input));
-            Console.WriteLine("-------------------");
+        }
+
+        public Printer(IWriter writer)
+        {
+            _writer = writer;
+        }
+
+        public void Print(object input)
+        {
+            _writer.WriteLine(Serialize(input));
+            _writer.WriteLine("-------------------");
         }
     }
 }

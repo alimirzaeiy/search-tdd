@@ -14,6 +14,7 @@ namespace search_tdd
             StringListCleaner clean = new StringListCleaner();
             // تمیز سازی حروف
             list = clean.Strings(strings);
+
         }
     }
 }

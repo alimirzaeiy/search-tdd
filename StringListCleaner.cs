@@ -16,6 +16,8 @@ namespace search_tdd
                 {
                     input[i] = input[i].Trim();
                     input[i] = input[i].Replace(",", "");
+                    input[i] = input[i].Replace("[", "");
+                    input[i] = input[i].Replace("]", "");
                     input[i] = input[i].Replace("\"", "");
                     input[i] = input[i].Replace(")", " ");
                     input[i] = input[i].Replace("(", " ");
@@ -34,11 +36,11 @@ namespace search_tdd
                     input[i] = input[i].Replace("^", "");
                     input[i] = input[i].Replace("&", "");
                     input[i] = input[i].Replace("*", "");
-                    input[i] = input[i].Replace("_", "");
+                    input[i] = input[i].Replace("_", " ");
                     input[i] = input[i].Replace("\\", "");
                     input[i] = input[i].Replace("~", "");
                     input[i] = input[i].Replace("'", "");
-                    input[i] = input[i].Replace("/", " ");
+                    input[i] = input[i].Replace("/", "");
                     input[i] = input[i].Replace("*", "");
                     input[i] = input[i].Replace("-", "");
                     input[i] = input[i].Replace(";", "");

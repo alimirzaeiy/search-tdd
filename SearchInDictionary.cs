@@ -12,8 +12,17 @@ namespace search_tdd
         {
             Console.Write(word + " : ");
             word = word.ToUpper();
-            Print.it(wordDictionary.dictionary[word]);
-            return wordDictionary.dictionary[word];
+            if (wordDictionary.dictionary.ContainsKey(word)) 
+            {
+                var printer = new Printer();
+                printer.Print(wordDictionary.dictionary[word]);
+                return wordDictionary.dictionary[word];
+            }else
+            {
+                Console.WriteLine("word not found");
+                return (null);
+            }
+            
         }
     }
 }

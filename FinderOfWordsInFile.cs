@@ -17,7 +17,8 @@ namespace search_tdd
                 //Console.WriteLine(i);
                 wordDictionary = findWords.FileIndexCalculator(input[i], i, wordDictionary);
             }
-            Print.it(wordDictionary);
+            var printer = new Printer();
+            printer.Print(wordDictionary);
             return wordDictionary;
         }
     }
